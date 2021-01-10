@@ -11,5 +11,8 @@ public class Polymorphism01 {
 
 		Human human2 = new Employee("田中", 28, "システム部");
 		System.out.println("Humanクラスのメソッド：プロフィールを紹介します。" + human2.getProfile());
+
+		Human human3 = new Human("木村", 40);
+		System.out.println("Humanクラスのメソッド：プロフィールを紹介します。" + human3.getProfile());
 	}
 }

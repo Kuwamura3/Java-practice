@@ -15,14 +15,21 @@ public class Chapter15_2 {
 		Path inputPath = fs.getPath("resouces/input.txt");
 		Path outputPath = fs.getPath("resouces/output.txt");
 		
-		try () {
+		try (BufferedReader reader = Files.newBufferedReader(inputPath);
+				BufferedWriter writer = Files.newBufferedWriter(outputPath);) {
+
 			String line = null;
 			
-			while () {
+			while ((line = reader.readLine()) != null) {
+				if (line.length() != 5) {
+					continue;
+				}
 				
+				writer.write(line);
+				writer.newLine();
 			}
-		} catch () {
-			
+		} catch (IOException e) {
+			e.printStackTrace();
 		} finally {
 			System.out.println("o—Íˆ—I—¹");
 		}
